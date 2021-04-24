@@ -13,10 +13,108 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Graphs">
+      <UniqueIdentifier>{a9939abc-f808-4c00-ac73-1225a3912edd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphs">
+      <UniqueIdentifier>{93092abc-cafb-4127-9590-13252a978108}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\AdjacencyList">
+      <UniqueIdentifier>{32189687-4a0d-414a-9cb7-e862fa0704d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\AdjacencyList">
+      <UniqueIdentifier>{d7772ecc-f0b7-4813-ba8c-28272e75c554}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data structures">
+      <UniqueIdentifier>{25d880ab-16f8-4870-b680-51cadd094745}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Data structures">
+      <UniqueIdentifier>{ae603513-34a7-45f7-9baa-0affb47d3e69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{adbaafc4-5c21-4a6d-a1c5-b96304d7a00a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{21698ded-9f66-4225-bd7f-bc3d4b81f4de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{91e86784-bf22-4a74-b517-e1504d038046}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="AdjacencyMatrixGraph.cpp">
+      <Filter>Source Files\Graphs</Filter>
     </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="AdjacencyList.cpp">
+      <Filter>Source Files\AdjacencyList</Filter>
+    </ClCompile>
+    <ClCompile Include="AdjacencyListNode.cpp">
+      <Filter>Source Files\AdjacencyList</Filter>
+    </ClCompile>
+    <ClCompile Include="AdjacencyListGraph.cpp">
+      <Filter>Source Files\Graphs</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHeap.cpp">
+      <Filter>Source Files\Data structures</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeNode.cpp">
+      <Filter>Source Files\Data structures</Filter>
+    </ClCompile>
+    <ClCompile Include="DynamicArray.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="myString.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="IO.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="BSTree.cpp">
+      <Filter>Source Files\Data structures</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files\Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjacencyMatrixGraph.h">
+      <Filter>Header Files\Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjacencyList.h">
+      <Filter>Header Files\AdjacencyList</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjacencyListNode.h">
+      <Filter>Header Files\AdjacencyList</Filter>
+    </ClInclude>
+    <ClInclude Include="AdjacencyListGraph.h">
+      <Filter>Header Files\Graphs</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHeap.h">
+      <Filter>Header Files\Data structures</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeNode.h">
+      <Filter>Header Files\Data structures</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicArray.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="myString.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="BSTree.h">
+      <Filter>Header Files\Data structures</Filter>
+    </ClInclude>
+    <ClInclude Include="IO.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
