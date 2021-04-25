@@ -19,12 +19,6 @@
     <Filter Include="Source Files\Graphs">
       <UniqueIdentifier>{93092abc-cafb-4127-9590-13252a978108}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\AdjacencyList">
-      <UniqueIdentifier>{32189687-4a0d-414a-9cb7-e862fa0704d0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\AdjacencyList">
-      <UniqueIdentifier>{d7772ecc-f0b7-4813-ba8c-28272e75c554}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Data structures">
       <UniqueIdentifier>{25d880ab-16f8-4870-b680-51cadd094745}</UniqueIdentifier>
     </Filter>
@@ -48,12 +42,6 @@
     <ClCompile Include="Graph.cpp">
       <Filter>Source Files\Graphs</Filter>
     </ClCompile>
-    <ClCompile Include="AdjacencyList.cpp">
-      <Filter>Source Files\AdjacencyList</Filter>
-    </ClCompile>
-    <ClCompile Include="AdjacencyListNode.cpp">
-      <Filter>Source Files\AdjacencyList</Filter>
-    </ClCompile>
     <ClCompile Include="AdjacencyListGraph.cpp">
       <Filter>Source Files\Graphs</Filter>
     </ClCompile>
@@ -65,9 +53,6 @@
     </ClCompile>
     <ClCompile Include="TreeNode.cpp">
       <Filter>Source Files\Data structures</Filter>
-    </ClCompile>
-    <ClCompile Include="DynamicArray.cpp">
-      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="myString.cpp">
       <Filter>Source Files\Utilities</Filter>
@@ -85,12 +70,6 @@
     </ClInclude>
     <ClInclude Include="AdjacencyMatrixGraph.h">
       <Filter>Header Files\Graphs</Filter>
-    </ClInclude>
-    <ClInclude Include="AdjacencyList.h">
-      <Filter>Header Files\AdjacencyList</Filter>
-    </ClInclude>
-    <ClInclude Include="AdjacencyListNode.h">
-      <Filter>Header Files\AdjacencyList</Filter>
     </ClInclude>
     <ClInclude Include="AdjacencyListGraph.h">
       <Filter>Header Files\Graphs</Filter>
@@ -114,6 +93,9 @@
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="LinkedList.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedListNode.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>

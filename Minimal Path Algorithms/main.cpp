@@ -4,20 +4,22 @@
 #include "DynamicArray.h"
 #include "LinkedList.h"
 #include "myString.h"
+#include "AdjacencyListGraph.h"
+#include "AdjacencyMatrixGraph.h"
 using namespace std;
 using namespace myStr;
 int main(int argc, char** argv) {
-	DynamicArray<LinkedList<int>> arr(3);
-	
-	int j, count = 0;
-	for (auto& i : arr) {
-		cout << "B4: ";
-		i.print();
-		for (j = 0; j < 4; j++) {
-			i.insertEnd(count++);
-		}
-		cout << "After: ";
-		i.print();
+	AdjacencyListGraph g1(5);
+	AdjacencyMatrixGraph g2(5);
+
+	for (int i = 0; i < 5; i++) {
+		g1.addEdge(i, (i + 1) % 5, 1);
+		g2.addEdge(i, (i + 1) % 5, 1);
+		g1.addEdge(i, (i + 2) % 5, 5);
+		g2.addEdge(i, (i + 2) % 5, 5);
+
 	}
 
+	g1.printGraph();
+	g2.printGraph();
 }
