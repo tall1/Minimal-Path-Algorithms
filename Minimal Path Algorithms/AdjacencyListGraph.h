@@ -8,7 +8,7 @@ class AdjacencyListGraph :
     public Graph
 {
 private:
-    DynamicArray<LinkedList<Graph::Edge>> arr;
+    DynamicArray<DoublyLinkedList<Graph::Edge>> arr;
 public:
 	AdjacencyListGraph(const int& m) :Graph(m), arr(m) {}
     ~AdjacencyListGraph() {}

@@ -1,6 +1,7 @@
 #pragma once
 #include "DynamicArray.h"
 #include "LinkedList.h"
+#include "DoublyLinkedList.h"
 class Graph
 {
 protected:
@@ -8,7 +9,7 @@ protected:
 	struct EdgePair;
 
 	int n;
-	LinkedList<Edge*> edge_list; //Every Graph contains an updated list of existing edges.
+	DoublyLinkedList<Edge*> edge_list; //Every Graph contains an updated list of existing edges.
 public:
 	struct Edge {
 		int from, to, weight; // weight of the edge
@@ -22,7 +23,7 @@ public:
 	};
 	struct EdgePair { // Graphs contain a pair of (Edge,Listnode*) to the edge Linkedlist
 		Edge edge;
-		LinkedListNode<Edge*> node_ptr;
+		LinkedListNode<Edge*>* node_ptr = nullptr;
 	};
 
 

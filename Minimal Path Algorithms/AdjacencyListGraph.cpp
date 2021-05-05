@@ -15,8 +15,10 @@ void AdjacencyListGraph::addEdge(const int& u, const int& v, const int& c) {
 	}
 	else {
 		Edge e(u, v, c);
-		if (!this->arr[u].doesExists(e))// Check if there is an edge already
+		if (!this->arr[u].doesExists(e)) {// Check if there is an edge already
 			this->arr[u].insertEnd(e);// Insert if not.
+			edge_list.insertEnd(&this->arr[u].back());// Insert the new edge to the edge list
+		}
 	}
 }
 void AdjacencyListGraph::removeEdge(const int& u, const int& v) {
@@ -25,6 +27,7 @@ void AdjacencyListGraph::removeEdge(const int& u, const int& v) {
 	}
 	else {
 		Edge e(u, v);
+		LinkedListNode<Edge>* node = this->arr[u].search(e);
 		this->arr[u].deleteNode(e);
 	}
 }

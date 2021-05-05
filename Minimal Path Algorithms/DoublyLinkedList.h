@@ -1,34 +1,33 @@
-
-#ifndef LIST_H
-#define LIST_H
+#ifndef DLIST_H
+#define DLIST_H
 
 #include <iostream>
-#include "LinkedListNode.h"
+#include "DoublyLinkedListNode.h"
 using namespace std;
 
 
 template <typename T>
-class LinkedList {
+class DoublyLinkedList {
 private:
-	LinkedListNode<T>* head;
-	LinkedListNode<T>* tail;
+	DoublyLinkedListNode<T>* head;
+	DoublyLinkedListNode<T>* tail;
 
 public:
-	LinkedList() :head(nullptr), tail(nullptr) {}
-	LinkedList(const LinkedList<T>& other) :head(nullptr), tail(nullptr) {
+	DoublyLinkedList() :head(nullptr), tail(nullptr) {}
+	DoublyLinkedList(const DoublyLinkedList<T>& other) :head(nullptr), tail(nullptr) {
 		if (!other.isEmpty()) {
-			LinkedListNode<T>* nodePtr = other.head;
+			DoublyLinkedListNode<T>* nodePtr = other.head;
 			while (nodePtr) {
 				this->insertEnd(nodePtr->data);
 				nodePtr = nodePtr->next;
 			}
 		}
 	}
-	~LinkedList() {
-		if (!isEmpty()) // LinkedList is not empty
+	~DoublyLinkedList() {
+		if (!isEmpty()) // DoublyLinkedList is not empty
 		{
-			LinkedListNode<T>* currentPtr = head;
-			LinkedListNode<T>* tempPtr;
+			DoublyLinkedListNode<T>* currentPtr = head;
+			DoublyLinkedListNode<T>* tempPtr;
 
 			while (currentPtr != nullptr) // delete remaining nodes
 			{
@@ -40,37 +39,38 @@ public:
 	}
 
 	bool isEmpty()const {
-		if (head == nullptr && tail == nullptr) //if the start pointer and end pointer are nullptr then the LinkedList is empty
+		if (head == nullptr && tail == nullptr) //if the start pointer and end pointer are nullptr then the DoublyLinkedList is empty
 			return true;
 		else
 			return false;
 	}
 	void insertBegin(const T& dataIn) {
-		LinkedListNode<T>* newPtr = new LinkedListNode<T>(dataIn);
+		DoublyLinkedListNode<T>* newPtr = new DoublyLinkedListNode<T>(dataIn);
 		if (isEmpty()) {
 			head = newPtr;
 			tail = newPtr;
-
 		}
 		else {
 			newPtr->next = head;
+			head->prev = newPtr;
 			head = newPtr;
 		}
 	}
 	void insertEnd(const T& dataIn) {
-		LinkedListNode<T>* newPtr = new LinkedListNode<T>(dataIn);
+		DoublyLinkedListNode<T>* newPtr = new DoublyLinkedListNode<T>(dataIn);
 
 		if (isEmpty()) {
 			head = newPtr;
 			tail = newPtr;
 		}
 		else {
+			newPtr->prev = tail;
 			tail->next = newPtr;
 			tail = newPtr;
 		}
 	}
 	void deleteNode(const T& key) {
-		LinkedListNode<T>* prev, * cur;
+		DoublyLinkedListNode<T>* cur;
 		if (isEmpty()) {
 			return;
 		}
@@ -81,25 +81,26 @@ public:
 			}
 			else {// head!=tail
 				cur = this->head->next;
+				cur->prev = nullptr;
 				delete head;
 				this->head = cur;
 			}
 		}
 		else { // head is not the node to delete
 			cur = this->head;
-			prev = cur;
-
 			while (cur) {
 				cur = cur->next;
 				if (cur->data == key) {
-					prev->next = cur->next;
+					cur->prev->next = cur->next;
 					if (cur == tail) {
-						this->tail = prev;
+						this->tail = cur->prev;
+					}
+					else {
+						cur->next->prev = cur->prev;
 					}
 					delete cur;
 					break;
 				}
-				prev = cur;
 			}
 		}
 	}
@@ -111,11 +112,11 @@ public:
 			return false;
 		}
 	}
-	LinkedListNode<T>* search(const T& key)const {
+	DoublyLinkedListNode<T>* search(const T& key)const {
 		bool found = false;
-		LinkedListNode<T>* nodePtr = head;
+		DoublyLinkedListNode<T>* nodePtr = head;
 
-		while ((!found) && (nodePtr != nullptr)) //runs through LinkedList until data is found within a node or end of LinkedList is reached
+		while ((!found) && (nodePtr != nullptr)) //runs through DoublyLinkedList until data is found within a node or end of DoublyLinkedList is reached
 		{
 			if (nodePtr->data == key) //if the node's data equals the key then the node has been found
 				found = true;
@@ -126,7 +127,7 @@ public:
 	}
 	void print() const
 	{
-		LinkedListNode<T>* cur = this->head;
+		DoublyLinkedListNode<T>* cur = this->head;
 
 		if (isEmpty()) {
 			cout << "The list is empty" << endl;
@@ -150,10 +151,10 @@ public:
 	//const_iterator
 	class const_iterator;
 
-	// Root of LinkedList wrapped in const_iterator type
+	// Root of DoublyLinkedList wrapped in const_iterator type
 	const_iterator begin() const { return const_iterator(head); }
 
-	// End of LinkedList wrapped in const_iterator type
+	// End of DoublyLinkedList wrapped in const_iterator type
 	const_iterator end() const { return const_iterator(nullptr); }
 
 	// const_iterator class can be used to
@@ -161,7 +162,7 @@ public:
 	class const_iterator
 	{
 	private:
-		const LinkedListNode<T>* cur_node;
+		const DoublyLinkedListNode<T>* cur_node;
 	public:
 		using const_iterator_category = std::bidirectional_iterator_tag;
 		// other options exist, e.g., std::forward_iterator_tag
@@ -174,10 +175,10 @@ public:
 		const_iterator() noexcept :
 			cur_node(head) { }
 
-		const_iterator(const LinkedListNode<T>* pNode) noexcept :
+		const_iterator(const DoublyLinkedListNode<T>* pNode) noexcept :
 			cur_node(pNode) { }
 
-		const_iterator& operator=(LinkedListNode<T>* pNode)
+		const_iterator& operator=(DoublyLinkedListNode<T>* pNode)
 		{
 			this->cur_node = pNode;
 			return *this;
@@ -209,7 +210,7 @@ public:
 			return cur_node->data;
 		}
 
-	
+
 	};
 };
 

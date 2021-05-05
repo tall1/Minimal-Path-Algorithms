@@ -5,7 +5,7 @@ class AdjacencyMatrixGraph :
     public Graph
 {
 protected:
-    Edge** arr; 
+    Edge** arr;
 public:
     AdjacencyMatrixGraph(const int& m);
     ~AdjacencyMatrixGraph();

@@ -156,6 +156,8 @@
     <ClInclude Include="AdjacencyMatrixGraph.h" />
     <ClInclude Include="BellmanFord.h" />
     <ClInclude Include="BSTree.h" />
+    <ClInclude Include="DoublyLinkedList.h" />
+    <ClInclude Include="DoublyLinkedListNode.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Graph.h" />
     <ClInclude Include="IO.h" />
