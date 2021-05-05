@@ -4,14 +4,8 @@
 class AdjacencyMatrixGraph :
     public Graph
 {
-private:
-    struct Edge {
-        int weight = 0; // weight of the edge
-        bool exists = false; // true if exists,false otherwise
-    };
-
-    Edge** arr;
-    int n;
+protected:
+    Edge** arr; 
 public:
     AdjacencyMatrixGraph(const int& m);
     ~AdjacencyMatrixGraph();
@@ -23,6 +17,5 @@ public:
     virtual void removeEdge(const int& u, const int& v);
 
     virtual void printGraph()const;
-
 };
 

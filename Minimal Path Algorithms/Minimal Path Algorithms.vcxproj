@@ -141,17 +141,20 @@
   <ItemGroup>
     <ClCompile Include="AdjacencyListGraph.cpp" />
     <ClCompile Include="AdjacencyMatrixGraph.cpp" />
+    <ClCompile Include="BellmanFord.cpp" />
     <ClCompile Include="BSTree.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MinHeap.cpp" />
+    <ClCompile Include="MinimalWeightAlgorithms.cpp" />
     <ClCompile Include="myString.cpp" />
     <ClCompile Include="TreeNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdjacencyListGraph.h" />
     <ClInclude Include="AdjacencyMatrixGraph.h" />
+    <ClInclude Include="BellmanFord.h" />
     <ClInclude Include="BSTree.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Graph.h" />
@@ -159,6 +162,7 @@
     <ClInclude Include="LinkedListNode.h" />
     <ClInclude Include="MinHeap.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="MinimalWeightAlgorithms.h" />
     <ClInclude Include="myString.h" />
     <ClInclude Include="TreeNode.h" />
   </ItemGroup>

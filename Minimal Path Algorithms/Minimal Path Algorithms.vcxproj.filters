@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Header Files\Graphs">
       <UniqueIdentifier>{a9939abc-f808-4c00-ac73-1225a3912edd}</UniqueIdentifier>
     </Filter>
@@ -33,6 +29,12 @@
     </Filter>
     <Filter Include="Source Files\Utilities">
       <UniqueIdentifier>{91e86784-bf22-4a74-b517-e1504d038046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Algorithms">
+      <UniqueIdentifier>{460a40a9-5ecc-4598-96b6-2c3a577218b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Algorithms">
+      <UniqueIdentifier>{84bad8b4-39c1-42ae-8bc9-0f50eec50cac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +64,12 @@
     </ClCompile>
     <ClCompile Include="BSTree.cpp">
       <Filter>Source Files\Data structures</Filter>
+    </ClCompile>
+    <ClCompile Include="MinimalWeightAlgorithms.cpp">
+      <Filter>Source Files\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="BellmanFord.cpp">
+      <Filter>Source Files\Algorithms</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +105,12 @@
     </ClInclude>
     <ClInclude Include="LinkedListNode.h">
       <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="MinimalWeightAlgorithms.h">
+      <Filter>Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="BellmanFord.h">
+      <Filter>Header Files\Algorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,10 +8,9 @@ class AdjacencyListGraph :
     public Graph
 {
 private:
-    DynamicArray<LinkedList<int>> arr;
-    int n;
+    DynamicArray<LinkedList<Graph::Edge>> arr;
 public:
-    AdjacencyListGraph(const int& m) :arr(m), n(m) {}
+	AdjacencyListGraph(const int& m) :Graph(m), arr(m) {}
     ~AdjacencyListGraph() {}
 
 	//virtual void MakeEmptyGraph(const int& n);

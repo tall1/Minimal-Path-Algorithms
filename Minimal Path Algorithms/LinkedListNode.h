@@ -8,13 +8,13 @@ class LinkedList;
 template <class T>
 class LinkedListNode { //nodes to be contained with a LinkedList
 private:
-	T data1, data2; //templatized data stored in node
+	T data; //templatized data stored in node
 	LinkedListNode* next; //pointer to the next node in LinkedList
 
 public:
 	friend class LinkedList<T>;
 	LinkedListNode() :next(nullptr) {}
-	LinkedListNode(T data1In, T data2In = 0) :data1(data1In), data2(data2In), next(nullptr) {}
+	LinkedListNode(const T& dataIn) :data(dataIn), next(nullptr) {}
 
 };
 #endif

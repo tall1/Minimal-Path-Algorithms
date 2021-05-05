@@ -6,7 +6,7 @@ bool AdjacencyListGraph::isAdjacent(const int& u, const int& v)const {
 		return false;
 	}
 	else {
-		return this->arr[u].doesExists(v); // return: v is a neighbore of u?
+		return this->arr[u].doesExists(Edge(u,v)); // return: v is a neighbore of u?
 	}
 }
 void AdjacencyListGraph::addEdge(const int& u, const int& v, const int& c) {
@@ -14,8 +14,9 @@ void AdjacencyListGraph::addEdge(const int& u, const int& v, const int& c) {
 		return;
 	}
 	else {
-		if (!this->arr[u].doesExists(v))// Check if there is an edge already
-			this->arr[u].insertEnd(v, c);// Insert if not.
+		Edge e(u, v, c);
+		if (!this->arr[u].doesExists(e))// Check if there is an edge already
+			this->arr[u].insertEnd(e);// Insert if not.
 	}
 }
 void AdjacencyListGraph::removeEdge(const int& u, const int& v) {
@@ -23,7 +24,8 @@ void AdjacencyListGraph::removeEdge(const int& u, const int& v) {
 		return;
 	}
 	else {
-		this->arr[u].deleteNode(v);
+		Edge e(u, v);
+		this->arr[u].deleteNode(e);
 	}
 }
 LinkedList<int> AdjacencyListGraph::GetAdjList(const int& u)const {
@@ -31,7 +33,11 @@ LinkedList<int> AdjacencyListGraph::GetAdjList(const int& u)const {
 		throw exception("Vertex does not exist");
 	}
 	else {
-		return this->arr[u];
+		LinkedList<int> adjLst;
+		for (const Graph::Edge& i : this->arr[u]) {
+			adjLst.insertBegin(i.to);
+		}
+		return adjLst;
 	}
 }
 void AdjacencyListGraph::printGraph()const {

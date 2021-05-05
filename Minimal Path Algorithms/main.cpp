@@ -13,13 +13,35 @@ int main(int argc, char** argv) {
 	AdjacencyMatrixGraph g2(5);
 
 	for (int i = 0; i < 5; i++) {
-		g1.addEdge(i, (i + 1) % 5, 1);
-		g2.addEdge(i, (i + 1) % 5, 1);
-		g1.addEdge(i, (i + 2) % 5, 5);
-		g2.addEdge(i, (i + 2) % 5, 5);
+		try {
+			g1.addEdge(i, (i + 1) % 5, 1);
+			g2.addEdge(i, (i + 1) % 5, 1);
+			g1.addEdge(i, (i + 2) % 5, 5);
+			g2.addEdge(i, (i + 2) % 5, 5);
+		}
+		catch (exception& e) {
+			cout << e.what() << endl;
+		}
 
 	}
 
 	g1.printGraph();
 	g2.printGraph();
+	cout << "g1 list: ";
+	g1.GetAdjList(3).print();
+	cout << endl;
+	cout << "g2 list: ";
+	g2.GetAdjList(3).print();
+	cout << endl;
+
 }
+
+//int main(int argc, char** argv) {
+//	LinkedList<int> l1;
+//	for (int i = 0; i < 5; i++) {
+//		l1.insertEnd(i);
+//	}
+//	for (const int& j : l1) {
+//		cout << j << " ";
+//	}
+//}
