@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "LinkedListNode.h"
+#include "DoublyLinkedList.h"
 using namespace std;
 
 
@@ -15,6 +16,15 @@ private:
 
 public:
 	LinkedList() :head(nullptr), tail(nullptr) {}
+	LinkedList(const DoublyLinkedList<T>& other) :head(nullptr), tail(nullptr) {
+		if (!other.isEmpty()) {
+			DoublyLinkedListNode<T>* nodePtr = other.head;
+			while (nodePtr) {
+				this->insertEnd(nodePtr->data);
+				nodePtr = nodePtr->next;
+			}
+		}
+	}
 	LinkedList(const LinkedList<T>& other) :head(nullptr), tail(nullptr) {
 		if (!other.isEmpty()) {
 			LinkedListNode<T>* nodePtr = other.head;
@@ -24,7 +34,16 @@ public:
 			}
 		}
 	}
-	~LinkedList() {
+	~LinkedList() { empty(); }
+	
+
+	bool isEmpty()const {
+		if (head == nullptr && tail == nullptr) //if the start pointer and end pointer are nullptr then the LinkedList is empty
+			return true;
+		else
+			return false;
+	}
+	void empty() {
 		if (!isEmpty()) // LinkedList is not empty
 		{
 			LinkedListNode<T>* currentPtr = head;
@@ -37,13 +56,7 @@ public:
 				delete tempPtr;
 			}
 		}
-	}
-
-	bool isEmpty()const {
-		if (head == nullptr && tail == nullptr) //if the start pointer and end pointer are nullptr then the LinkedList is empty
-			return true;
-		else
-			return false;
+		head = tail = nullptr;
 	}
 	void insertBegin(const T& dataIn) {
 		LinkedListNode<T>* newPtr = new LinkedListNode<T>(dataIn);
@@ -139,6 +152,16 @@ public:
 				cur = cur->next; //moves to next node in list
 			}
 			cout << endl;
+		}
+	}
+	void operator=(const LinkedList<T>& other) {
+		empty();
+		if (!other.isEmpty()) {
+			LinkedListNode<T>* nodePtr = other.head;
+			while (nodePtr) {
+				this->insertEnd(nodePtr->data);
+				nodePtr = nodePtr->next;
+			}
 		}
 	}
 

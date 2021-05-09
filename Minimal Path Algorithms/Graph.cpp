@@ -12,3 +12,9 @@ ostream& operator<<(ostream& output, const Graph::Edge& e) {
 	}
 	return output;
 }
+
+void Graph::printEdgeList()const {
+	for (Graph::Edge* i : edge_list) {
+		cout << i->from << " " << i->to << "(" << i->weight << ")" << endl;
+	}
+}

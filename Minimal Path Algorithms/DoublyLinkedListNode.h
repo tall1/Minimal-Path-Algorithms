@@ -14,8 +14,10 @@ private:
 
 public:
 	friend class DoublyLinkedList<T>;
+	friend class LinkedList<T>;
+
 	DoublyLinkedListNode() :next(nullptr), prev(nullptr) {}
 	DoublyLinkedListNode(const T& dataIn) :data(dataIn), next(nullptr), prev(nullptr) {}
-
+	T& getData(){ return data; }
 };
 #endif

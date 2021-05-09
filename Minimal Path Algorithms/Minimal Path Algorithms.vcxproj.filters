@@ -53,23 +53,26 @@
     <ClCompile Include="MinHeap.cpp">
       <Filter>Source Files\Data structures</Filter>
     </ClCompile>
-    <ClCompile Include="TreeNode.cpp">
-      <Filter>Source Files\Data structures</Filter>
-    </ClCompile>
-    <ClCompile Include="myString.cpp">
-      <Filter>Source Files\Utilities</Filter>
-    </ClCompile>
     <ClCompile Include="IO.cpp">
       <Filter>Source Files\Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="BSTree.cpp">
-      <Filter>Source Files\Data structures</Filter>
     </ClCompile>
     <ClCompile Include="MinimalWeightAlgorithms.cpp">
       <Filter>Source Files\Algorithms</Filter>
     </ClCompile>
     <ClCompile Include="BellmanFord.cpp">
       <Filter>Source Files\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="Dijkstra.cpp">
+      <Filter>Source Files\Algorithms</Filter>
+    </ClCompile>
+    <ClCompile Include="PriorityQueue.cpp">
+      <Filter>Source Files\Data structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Distance.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="UnsortedMinArray.cpp">
+      <Filter>Source Files\Data structures</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,17 +88,8 @@
     <ClInclude Include="MinHeap.h">
       <Filter>Header Files\Data structures</Filter>
     </ClInclude>
-    <ClInclude Include="TreeNode.h">
-      <Filter>Header Files\Data structures</Filter>
-    </ClInclude>
     <ClInclude Include="DynamicArray.h">
       <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="myString.h">
-      <Filter>Header Files\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="BSTree.h">
-      <Filter>Header Files\Data structures</Filter>
     </ClInclude>
     <ClInclude Include="IO.h">
       <Filter>Header Files\Utilities</Filter>
@@ -118,5 +112,21 @@
     <ClInclude Include="DoublyLinkedListNode.h">
       <Filter>Header Files\Utilities</Filter>
     </ClInclude>
+    <ClInclude Include="Dijkstra.h">
+      <Filter>Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue.h">
+      <Filter>Header Files\Data structures</Filter>
+    </ClInclude>
+    <ClInclude Include="Distance.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="UnsortedMinArray.h">
+      <Filter>Header Files\Data structures</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
+    <Text Include="Text2.txt" />
   </ItemGroup>
 </Project>

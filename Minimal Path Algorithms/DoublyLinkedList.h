@@ -13,6 +13,7 @@ private:
 	DoublyLinkedListNode<T>* tail;
 
 public:
+	friend class LinkedList<T>;
 	DoublyLinkedList() :head(nullptr), tail(nullptr) {}
 	DoublyLinkedList(const DoublyLinkedList<T>& other) :head(nullptr), tail(nullptr) {
 		if (!other.isEmpty()) {
@@ -24,18 +25,7 @@ public:
 		}
 	}
 	~DoublyLinkedList() {
-		if (!isEmpty()) // DoublyLinkedList is not empty
-		{
-			DoublyLinkedListNode<T>* currentPtr = head;
-			DoublyLinkedListNode<T>* tempPtr;
-
-			while (currentPtr != nullptr) // delete remaining nodes
-			{
-				tempPtr = currentPtr;
-				currentPtr = currentPtr->next;
-				delete tempPtr;
-			}
-		}
+		empty();
 	}
 
 	bool isEmpty()const {
@@ -102,6 +92,21 @@ public:
 					break;
 				}
 			}
+		}
+	}
+	void empty() {
+		if (!isEmpty()) // DoublyLinkedList is not empty
+		{
+			DoublyLinkedListNode<T>* currentPtr = head;
+			DoublyLinkedListNode<T>* tempPtr;
+
+			while (currentPtr != nullptr) // delete remaining nodes
+			{
+				tempPtr = currentPtr;
+				currentPtr = currentPtr->next;
+				delete tempPtr;
+			}
+			head = tail = nullptr;
 		}
 	}
 	bool doesExists(const T& key)const {

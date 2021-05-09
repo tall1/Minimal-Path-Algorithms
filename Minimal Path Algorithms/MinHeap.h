@@ -1,27 +1,24 @@
 #pragma once
-#include "BSTree.h"
-class MinHeap
+#include "PriorityQueue.h"
+#include "DynamicArray.h"
+class MinHeap :
+	public PriorityQueue
 {
-private:
-	TreeNode** heapArr;
-	int heapSize, capacity;
-	bool allocated;
-	static int Parent(const int& node) { return (node - 1) / 2; }
-	static int Left(const int& node) { return (2 * node + 1); }
-	static int Right(const int& node) { return (2 * node + 2); }
-	void FixHeap(const int& node);
-	void Swap(const int& a, const int& b);
+protected:
+	int parent(const int& node) { return (node - 1) / 2; }
+	int left(const int& node) { return (2 * node + 1); }
+	int right(const int& node) { return (2 * node + 2); }
+	void fixHeap(const int& node);
+	void swap(const int& a, const int& b);
 public:
-	MinHeap(const int& maxCapacity);
-	MinHeap(const BSTree& tree);
-	~MinHeap();
+	MinHeap(const int& m) :PriorityQueue(m) {}
 
-	const int& getSize()const { return heapSize; }
-
-	TreeNode* Min()const { return heapArr[0]; }
-	TreeNode* DeleteMin();
-	void Insert(TreeNode* node);
-	bool isEmpty()const { return heapSize == 0; }
-	void makeEmpty();
+	virtual void push(const int& data, const Distance& ds);
+	virtual PriorityQueue::Pair pop();
+	virtual const PriorityQueue::Pair& top() { return arr[0]; }
+	virtual void empty() { logSize = 0; }
+	virtual bool isEmpty() { return logSize == 0; }
+	virtual void update(const Pair& p);
+	virtual void printPriorityQueue()const;
 };
 

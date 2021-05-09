@@ -142,20 +142,22 @@
     <ClCompile Include="AdjacencyListGraph.cpp" />
     <ClCompile Include="AdjacencyMatrixGraph.cpp" />
     <ClCompile Include="BellmanFord.cpp" />
-    <ClCompile Include="BSTree.cpp" />
+    <ClCompile Include="Dijkstra.cpp" />
+    <ClCompile Include="Distance.cpp" />
     <ClCompile Include="Graph.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MinHeap.cpp" />
     <ClCompile Include="MinimalWeightAlgorithms.cpp" />
-    <ClCompile Include="myString.cpp" />
-    <ClCompile Include="TreeNode.cpp" />
+    <ClCompile Include="PriorityQueue.cpp" />
+    <ClCompile Include="UnsortedMinArray.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdjacencyListGraph.h" />
     <ClInclude Include="AdjacencyMatrixGraph.h" />
     <ClInclude Include="BellmanFord.h" />
-    <ClInclude Include="BSTree.h" />
+    <ClInclude Include="Dijkstra.h" />
+    <ClInclude Include="Distance.h" />
     <ClInclude Include="DoublyLinkedList.h" />
     <ClInclude Include="DoublyLinkedListNode.h" />
     <ClInclude Include="DynamicArray.h" />
@@ -165,8 +167,12 @@
     <ClInclude Include="MinHeap.h" />
     <ClInclude Include="LinkedList.h" />
     <ClInclude Include="MinimalWeightAlgorithms.h" />
-    <ClInclude Include="myString.h" />
-    <ClInclude Include="TreeNode.h" />
+    <ClInclude Include="PriorityQueue.h" />
+    <ClInclude Include="UnsortedMinArray.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Text.txt" />
+    <Text Include="Text2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

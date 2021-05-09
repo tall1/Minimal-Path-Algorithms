@@ -1,54 +1,46 @@
 ﻿// Name: Tal Lev
 // Id: 312495955
 #include <iostream>
-#include "DynamicArray.h"
-#include "LinkedList.h"
-#include "DoublyLinkedList.h"
-#include "myString.h"
+#include "IO.h"
 #include "AdjacencyListGraph.h"
 #include "AdjacencyMatrixGraph.h"
-using namespace std;
-using namespace myStr;
-//int main(int argc, char** argv) {
-//	AdjacencyListGraph g1(5);
-//	AdjacencyMatrixGraph g2(5);
-//
-//	for (int i = 0; i < 5; i++) {
-//		try {
-//			g1.addEdge(i, (i + 1) % 5, 1);
-//			g2.addEdge(i, (i + 1) % 5, 1);
-//			g1.addEdge(i, (i + 2) % 5, 5);
-//			g2.addEdge(i, (i + 2) % 5, 5);
-//		}
-//		catch (exception& e) {
-//			cout << e.what() << endl;
-//		}
-//
-//	}
-//
-//	g1.printGraph();
-//	g2.printGraph();
-//	cout << "g1 list: ";
-//	g1.GetAdjList(3).print();
-//	cout << endl;
-//	cout << "g2 list: ";
-//	g2.GetAdjList(3).print();
-//	cout << endl;
-//
-//}
+#include "BellmanFord.h"
+#include "Dijkstra.h"
 
+using namespace std;
 int main(int argc, char** argv) {
-	DoublyLinkedList<int> l1;
-	for (int i = 0; i < 5; i++) {
-		l1.insertEnd(i);
+	DynamicArray<MinimalWeightAlgorithms*> algArr(6);
+	AdjacencyListGraph g1;
+	AdjacencyMatrixGraph g2;
+	int u, v;
+	//Read from file and create graphs:
+	try {
+		IO::readFromFile(argv[1], g1, u, v);// g1 is an adjency list
+		IO::readFromFile(argv[1], g2, u, v);// g2 is a matrix
 	}
-	for (const int& j : l1) {
-		cout << j << " ";
+	catch (exception& e) {
+		cout << e.what() << endl;
+		exit(1);
 	}
-	cout << endl;
-	l1.deleteNode(2);
-	l1.print();
-	cout << endl;
-	l1.deleteNode(0);
-	l1.print();
+
+	// Fill in algorithms
+	algArr[0] = new Dijkstra(g1, u, Dijkstra::queue_type::HEAP);
+	algArr[1] = new Dijkstra(g1, u, Dijkstra::queue_type::UNSORTED_ARRAY);
+	algArr[2] = new BellmanFord(g1, u);
+	algArr[3] = new Dijkstra(g2, u, Dijkstra::queue_type::HEAP);
+	algArr[4] = new Dijkstra(g2, u, Dijkstra::queue_type::UNSORTED_ARRAY);
+	algArr[5] = new BellmanFord(g2, u);
+
+	// Run and calculate runtime
+	try {
+		IO::writeToFile(argv[2], algArr, v);
+	}
+	catch (exception& e) {
+		cout << e.what() << endl;
+		exit(1);
+	}
+	// Delete used algorithms
+	for (MinimalWeightAlgorithms*& i : algArr) {
+		delete i;
+	}
 }

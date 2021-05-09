@@ -8,18 +8,17 @@ class AdjacencyListGraph :
     public Graph
 {
 private:
-    DynamicArray<DoublyLinkedList<Graph::Edge>> arr;
+    DoublyLinkedList<Graph::Edge>* arr;
 public:
-	AdjacencyListGraph(const int& m) :Graph(m), arr(m) {}
+    AdjacencyListGraph() :Graph(), arr(nullptr) {}
+	AdjacencyListGraph(const int& m) :Graph(m), arr(new DoublyLinkedList<Graph::Edge>[m]) {}
     ~AdjacencyListGraph() {}
 
-	//virtual void MakeEmptyGraph(const int& n);
-
-
-    virtual bool isAdjacent(const int& u, const int& v)const;
-    virtual LinkedList<int> GetAdjList(const int& u)const;
-    virtual void addEdge(const int& u, const int& v, const int& c);
-    virtual void removeEdge(const int& u, const int& v);
+    virtual void MakeEmptyGraph(const int& n);// Makes an empty graph
+    virtual bool isAdjacent(const int& u, const int& v)const;// true <=> (u,v) belongs to E
+    virtual LinkedList<Edge> GetAdjList(const int& u)const;// Returns adjency list
+    virtual void addEdge(const int& u, const int& v, const double& c);// Add edge
+    virtual void removeEdge(const int& u, const int& v);// Remove edge
 
     virtual void printGraph()const;
 };

@@ -8,7 +8,6 @@ class DynamicArray
 private:
 	T* arr;
 	int logSize, capacity;
-	void resize();
 public:
 	DynamicArray() :arr(nullptr), logSize(0), capacity(0) {}
 	DynamicArray(const int& size) :arr(new T[size]), logSize(size), capacity(size) { if (!arr)throw	bad_alloc(); }
@@ -22,6 +21,13 @@ public:
 
 	const T& front() const { return arr[0]; }
 	const T& back() const { return arr[logSize - 1]; }
+
+	void reserve(const int& new_size){
+		while(this->capacity < new_size) {
+			this->resize();
+		}
+	}
+	void resize();
 
 	const int& getLogSize() const { return logSize; }
 	const int& getCapacity() const { return capacity; }
